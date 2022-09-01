@@ -1,12 +1,16 @@
 package com.example.spring_boot_rest;
 
-
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class AuthorizationService {
     UserRepository userRepository;
+
+    public AuthorizationService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     List<Authorities> getAuthorities(String user, String password) {
         if (isEmpty(user) || isEmpty(password)) {
