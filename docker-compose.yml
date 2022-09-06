@@ -1,0 +1,6 @@
+build: ./
+
+services:
+  newApp:
+    ports:
+      - '8080:9999'
